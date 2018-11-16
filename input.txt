@@ -1,0 +1,12 @@
+In this tutorial we are going to see how to use RandomAccessFile in order to to 
+read and write data to a File (in random positions). The RandomAccessFile class 
+treats the file as an array of Bytes. You can write your data in any position of 
+the "array". To do that, it uses a pointer that holds the current position 
+(you can think of the file pointer as a cursor in a text editor).
+
+The RandomAccessFile does that using:
+
+    getFilePointer() to get the current position of the pointer
+    seek(int ) to set the position of the pointer
+    read(byte[] b) to reads up to b.length bytes of data from the file into an array of bytes
+    write(byte[] b) to write b.length bytes from the specified byte array to the file, starting at the current file pointer position
