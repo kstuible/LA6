@@ -33,6 +33,8 @@ public class Encoder implements IEncoder {
 				randFile.write(randInt);
 			}
 			
+			randFile.writeInt(-1);
+			
 			randFile.close();
 			fileIn.close();
 		} 
