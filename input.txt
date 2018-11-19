@@ -1,12 +1,37 @@
-In this tutorial we are going to see how to use RandomAccessFile in order to to 
-read and write data to a File (in random positions). The RandomAccessFile class 
-treats the file as an array of Bytes. You can write your data in any position of 
-the "array". To do that, it uses a pointer that holds the current position 
-(you can think of the file pointer as a cursor in a text editor).
+In my past job I had to teach a staff of about 60
+restaurant servers about beer, so that's what we'll 
+write about in here.
 
-The RandomAccessFile does that using:
+Lagers vs Ales:
+Lagers and ales are different in a few main ways:
+Lagers are cold fermented, typically around 40 degrees F
+with a yeast that is "bottom fermenting" - that is to say, 
+the yeast is active while in the bottom of the beer.
+Typical examples of the style would be things like 
+American Adjunct Lagers, German or Czech Pilsners, 
+schwartzbiers, myriad bocks - Helles Bock, DoppelBock, regular bocks (amber), 
+but NOT WeizenBocks - those are ales, and contain wheat!
+There is less diversity in lager yeasts, and therefore you have 
+less diversity in flavor profiles! Lagers are Malt-driven, and rely less
+on flavors from hops, which is why cleaner Noble variety hops
+are typically used. Since they are fermented cold, the yeast naturally
+"cold-crashes" out, and you're left with a clearer beer with less flavor from yeast.
 
-    getFilePointer() to get the current position of the pointer
-    seek(int ) to set the position of the pointer
-    read(byte[] b) to reads up to b.length bytes of data from the file into an array of bytes
-    write(byte[] b) to write b.length bytes from the specified byte array to the file, starting at the current file pointer position
+Ales, by contrast are fermented with top-fermenting yeasts, which are
+active at warmer temperatures - typically around 70 degrees F, but work from 
+about 60 degrees to as high as 90 degrees for saisons! There is HUGE diversity
+in ale yeasts, ranging from yeast like sierra nevada's chico strain, used for
+pale ales and IPAs, to traditional Belgian yeasts for Abbey ales, Dubbels, Tripels,
+Quadrupels, Saisons, and everywhere in between for amber ales, brown ales, 
+porters, stouts, and more. Ales are more yeast and hop driven in their flavor profiles, 
+with esters and phenyls coming into play. Your typical hefeweizen has loads of
+esters, which present as banana and bubblegum-like flavors. Unfiltered ales can be cold-crashed,
+but in beers like hefeweizens or new england-style IPAs, it is not desired! Hops play a huge role
+in ales, especially Pale Ales and IPAs, and can range in flavor from resiny and piney, to bright,
+tropical, and citrusy, and even some, like mosaic hops, can have flavor descriptors such as
+"cat pee". I kid you not.
+
+Anyway, enjoy your favorite alcoholic libation (if you're of age)
+over the Thanksgiving break!
+
+Cheers!
