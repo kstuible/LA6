@@ -10,7 +10,8 @@ public class Encoder implements IEncoder {
 
 	String text = "";
 	Random rand = new Random();
-	int randInt;
+	int randInt = 0;
+	int pos = 0;
 	
 	@Override
 	public void encode(String inputFileName, String outputFilePath) throws IOException {
@@ -25,16 +26,20 @@ public class Encoder implements IEncoder {
 			
 			RandomAccessFile randFile = new RandomAccessFile(outputFilePath, "rw");
 			
+			randFile.seek(pos);
+			
 			for(int i = 0; i < text.length(); i++) {
-				
-				randFile.writeChar(text.charAt(i));
-				randInt = rand.nextInt(20)+1;
-				randFile.writeInt(randInt);
-				randFile.write(randInt);
+				if(i != text.length()-1) {
+					randFile.writeChar(text.charAt(i));
+					randInt = rand.nextInt(20)+1;
+					randFile.writeInt(randInt);
+					randFile.seek(randFile.getFilePointer() + randInt);
+				} else {
+					randFile.writeChar(text.charAt(i));
+					randFile.writeInt(-1);
+				}
 			}
-			
-			randFile.writeInt(-1);
-			
+						
 			randFile.close();
 			fileIn.close();
 		} 
