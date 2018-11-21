@@ -7,7 +7,7 @@ public class Decoder implements IDecoder {
 
 	String text = "";
 	int pos = 0;
-	int s = 0;
+	int num = 0;
 	
 	/**
 	 * Reads from the encoded file and prints the correct message to the console
@@ -21,12 +21,12 @@ public class Decoder implements IDecoder {
 			RandomAccessFile randy = new RandomAccessFile(encodedFileName, "rw");
 			randy.seek(0);
 		
-			while(s != -1) {
-				text = text + randy.readChar();
+			while(num != -1) {
+				text += randy.readChar();
 				pos += 2;
-				s = randy.readInt();
+				num = randy.readInt();
 				pos += 4;
-				pos += s;
+				pos += num;
 				randy.seek(pos);
 			}
 			randy.close();
