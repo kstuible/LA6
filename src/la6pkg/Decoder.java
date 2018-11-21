@@ -18,21 +18,22 @@ public class Decoder implements IDecoder {
 	@Override
 	public void decode(String encodedFileName) throws IOException{
 		try {
-			RandomAccessFile randy = new RandomAccessFile(encodedFileName, "r");
+			RandomAccessFile randy = new RandomAccessFile(encodedFileName, "rw");
 			randy.seek(0);
 		
-			while(s != 1) {
-				text += randy.readChar();
+			while(s != -1) {
+				text = text + randy.readChar();
 				pos += 2;
 				s = randy.readInt();
-				s += 4;
+				pos += 4;
 				pos += s;
 				randy.seek(pos);
-			}randy.close();
+			}
+			randy.close();
+			System.out.print(text);
 		}
 		catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.print(text);
 	}
 }
