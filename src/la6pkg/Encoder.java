@@ -14,6 +14,13 @@ public class Encoder implements IEncoder {
 	int pos = 0;
 	byte[] bArr;
 	
+	/**
+	 * Stores each line of the input file into a string. Then encodes the string and
+	 * writes to a random access file.
+	 * 
+	 * @param inputFileName   name of input file
+	 * @param outputFileName   name of output file
+	 */
 	@Override
 	public void encode(String inputFileName, String outputFilePath) throws IOException {
 		try {
